@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>炭中和</title>
+    <link rel="stylesheet" href="./aos-2.3.2/dist/aos.css">
+    <link rel="stylesheet" href="./bootstrap-5.1.3/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./index.css">
+    <script src="./anime-3.2.1/lib/anime.min.js"></script>
+    <script src="./aos-2.3.2/dist/aos.js"></script>
+    <script src="./chart.js-3.9.1/dist/chart.js"></script>
+    <script src="./bootstrap-5.1.3/dist/js/bootstrap.js"></script>
+    <script src="./data.js"></script>
+    <script src="./three.js-r145/build/three.js"></script>
+    <script src="./three.js-r145/examples/js/controls/OrbitControls.js"></script>
+</head>
+
+<body>
+    <div id="top"></div>
+    <header class="header">
+        <div class="nav__bg container-fluid">
+            <nav class="navbar navbar-expand-xl container navbar-dark">
+                <a href="#top"><img src="./images/logo.png" class="logo"></a>
+                <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#link">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end" id='link'>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="#how" class="nav-link nav__link">如何低碳</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#eat" class="nav-link nav__link">低碳飲食</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#work" class="nav-link nav__link">低碳生活</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#order" class="nav-link nav__link">低碳便當</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#date" class="nav-link nav__link">減碳數據</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item"
+                            onclick="window.open('index.html','_blank','top=100,left=500,width=500,height=700')">
+                            <a href="javascript://" class="nav-link ">
+                                <img src="./images/phone.png" class="nav__icon phone__icon">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#letten" class="nav-link ">
+                                <img src="./images/letten.png" class="nav__icon letten__icon">
+                            </a>
+                        </li>
+                        <li class="nav-link" onclick="moon()">
+                            <img src="./images/sun.png" class="nav__icon moon">
+                        </li>
+                        <li class="nav-link" data-bs-toggle="modal" data-bs-target="#root">
+                            <img src="./images/root.png" class="nav__icon">
+                        </li>
+                    </ul>
+                    <div class="search">
+                        <input type="text" class="scarch__input" placeholder="搜尋...">
+                        <img src="./images/search.png" class="search__icon">
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="header__bg carousel carousel-fade slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/headear_bg1.jpeg" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/headear_bg2.jpg" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/headear_bg3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <section class="container mt-5 pt-3">
+            <div class="row">
+                <div class="col-xxl-6 col-sm-12 text-light">
+                    <h1 class="header__title">低碳生活，低碳飲食，碳中和</h1>
+                    <h4>近幾年全球暖化造成的氣候變遷，
+                        不僅改變了生態環境，造成生物多樣性的保存不易，
+                        也影響到人類的日常生活，例如乾旱與水災發生的頻率增加，
+                        導致民生用水供應不穩定，
+                        若繼續忽視氣候變遷帶來的影響，毫無節制地浪費資源，
+                        只會加重全球暖化問題，最後面臨不可挽回的生態浩劫，為了延緩氣候變遷，
+                        每個人都應注重節能減碳，一起照顧地球的健康！
+                    </h4>
+                </div>
+                <div class="col-xxl-6 col-sm-12">
+                    <div class="threecontainer"></div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main class="main">
+        <div id="how"></div>
+        <section class="how__container my-5 py-5 w-100">
+            <div class="container">
+                <h1 class="title" data-aos="fade-right" data-aos-duration="700">如何減碳</h1>
+                <h5 data-aos="fade-left" data-aos-duration="900">
+                    要減緩全球暖化的速度，得先減少溫室氣體（如二氧化碳、甲烷）及碳排放，
+                    聯合國《2019年碳排放差距報告》指出，若能在2020年到2030年之間採取更積極的減碳行動，
+                    每年減少7.6%碳排放，就能把全球升溫控制在1.5℃以內，進而避免更嚴重的氣候變異。
+                    近期因節能減碳而明顯改善環境污染的案例，就發生於2019年年末COVID-19疫情爆發後，
+                    人們為了避免染疫開始減少外出頻率，使得碳排放急遽下降，2020年3月美國國家航空暨太空總署（NASA）
+                    發布了地球空拍對照圖，對比各國在疫情前後的空污差異，
+                    發現在中國和義大利北部上空的二氧化氮含量下降，霧霾情形獲得大幅改善，
+                    而紐約在疫情期間的二氧化碳排放量也減少5~10%，可見節能減碳是拯救地球的有效方法。
+                </h5>
+            </div>
+            <ul class="how__box">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div id="eat"></div>
+        </section>
+        <section class="container my-5 py-5">
+            <h1 class="title" data-aos="fade-right" data-aos-duration="700">低碳飲食</h1>
+            <div class="row">
+                <div class="col-xl-4 col-sm-12 eat__container">
+                    <div class="eat bgfirst rounded-pill">
+                        <img src="./images/eat1.png" alt="" class="eat__img rounded-circle end-0">
+                        <h3 class="me-5 mb-0 pe-5">少選加工食品</h3>
+                    </div>
+                    <div class="eat bgtwo rounded-pill">
+                        <img src="./images/eat2.png" alt="" class="eat__img two rounded-circle end-0">
+                        <h3 class="me-5 mb-0 pe-5">選擇當地食材</h3>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-sm-12 eat__center">
+                    <div class="eat__imgbox w-100">
+                        <img src="./images/eat1.png" class="rounded-circle w-100">
+                    </div>
+                    <h2 class="eat__centerh1 mt-5 mb-3">少選加工食品</h2>
+                    <h4 class="eat__centerh4">選擇鮮新食材，少選擇加工食品，加工食品需要放入冰箱或是其他方式保存，過程會產生碳</h4>
+                </div>
+                <div class="col-xl-4 col-sm-12 eat__container">
+                    <div class="eat bgtwo rounded-pill">
+                        <img src="./images/eat4.png" alt="" class="eat__img two rounded-circle start-0">
+                        <h3 class="ms-5 mb-0 ps-5">選擇當季食材</h3>
+                    </div>
+                    <div class="eat bgfirst rounded-pill">
+                        <img src="./images/eat3.png" alt="" class="eat__img rounded-circle start-0">
+                        <h3 class="ms-5 mb-0 ps-5">多吃蔬果</h3>
+                    </div>
+                </div>
+            </div>
+            <div id="work"></div>
+        </section>
+        <section class="container my-5 py-5">
+            <h1 class="title" data-aos="fade-right" data-aos-duration="700">減碳生活</h1>
+            <div class="work__contianer"></div>
+            <div id="order"></div>
+        </section>
+        <section class="container my-5 py-5">
+            <h1 class="title" data-aos="fade-right" data-aos-duration="700">減碳便當販售</h1>
+            <div class="row order__container">
+                <div class="modal fade" id="shop">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header shop__header">
+                                <h2 class="mb-0">購物清單</h2>
+                                <button class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body shop__body"></div>
+                            <div class="modal-footer">
+                                <h2 class="shop__sum colortwo fw">總計$0</h2>
+                                <button class="btn" data-bs-dismiss="modal" data-bs-toggle="modal"
+                                    data-bs-target="#orderok" onclick="close_shop()">結帳</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="orderok">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="mb-0">訂單已送出</h2>
+                            <button class="btn-close" data-bs-misdiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="./images/ok.png" class="mx-auto d-block">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn" data-bs-misdiss="modal">關閉</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="date"></div>
+        </section>
+        <section class="container my-5 py-5">
+            <h1 class="title" data-aos="fade-right" data-aos-duration="700">台灣歷年減碳數據</h1>
+            <canvas class="mycanvas"></canvas>
+        </section>
+        <div id="letten"></div>
+    </main>
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-7 col-sm-12">
+                    <form class="footer__form" onsubmit="footer_send()">
+                        <h2 class="colorfirst fw">留言區</h2>
+                        <div class="my-4">
+                            <label class="fs-4 fw">姓名</label>
+                            <input type="text" class="name__input footer__input" required="required"
+                                placeholder="name...">
+                        </div>
+                        <div class="my-4">
+                            <label class="fs-4 fw">信箱</label>
+                            <input type="email" class="email__input footer__input" required="required"
+                                placeholder="gmail...">
+                        </div>
+                        <div class="my-4">
+                            <label class="fs-4 fw">訊息</label>
+                            <input type="text" class="message__input footer__input" required="required"
+                                placeholder="message...">
+                        </div>
+                        <div class="my-5 footer__btnbox">
+                            <input type="reset" class="btn footer__btn bgtwo" value="重設">
+                            <input type="submit" class="btn footer__btn bgtwo" value="送出">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xl-5 col-sm-12">
+                    <div class="footer__borad">
+                        <h2 class="colorfirst fw borad__title">
+                            留言版
+                            <img src="./images/pen2.png" width="10%" class="ms-2 pen">
+                        </h2>
+                        <div class="line mt-2 mb-3"></div>
+                        <div class="borad__container"></div>
+                                                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__down text-light">
+            <div class="wave"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-sm-12 ">
+                        <h2>聯絡資訊</h2>
+                        <p class="fs-5">電話 : (02)-1233-4567</p>
+                        <p class="fs-5">地址 : 新北市三重區</p>
+                        <p class="fs-5">信箱 : B029@gmail.com</p>
+                    </div>
+                    <div class="col-xl-4 col-sm-12 footer__downcenter">
+                        <p class="fs-5">© 2022 B029</p>
+                    </div>
+                    <div class="col-xl-4 col-sm-12">
+                        <h2 class="text-center">關注我們</h2>
+                        <div class="footer__downimgbox">
+                            <img src="./images/fb.png" width="45px" class="footer__downimg" data-bs-toggle="modal"
+                                data-bs-target="#nono">
+                            <img src="./images/ig.png" width="45px" class="footer__downimg" data-bs-toggle="modal"
+                                data-bs-target="#nono">
+                            <img src="./images/line.png" width="45px" class="footer__downimg" data-bs-toggle="modal"
+                                data-bs-target="#nono">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="nono">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="mb-0 d-flex align-items-center">
+                            您目前沒有網路連線
+                            <img src="./images/wifi.png" width="10%" class="ms-2">
+                        </h2>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h3>您目前沒有網路連線，請先檢查網路連線狀態後再試一次</h3>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-bs-dismiss="modal">關閉</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="root">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="mb-0 d-flex align-items-center">
+                            會員登入
+                        </h2>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="fs-4 fw">帳號</label>
+                            <input type="text" class="footer__input" required="required" placeholder="帳號...">
+                        </div>
+                        <div class="mb-3">
+                            <label class="fs-4 fw">密碼</label>
+                            <input type="password" class="footer__input" required="required" placeholder="密碼...">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-bs-dismiss="modal" data-bs-toggle="modal"
+                            data-bs-target="#rootok">登入</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="rootok">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="mb-0 d-flex align-items-center">
+                            登入成功
+                        </h2>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="./images/ok.png" class="mx-auto d-block">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-bs-dismiss="modal">關閉</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="order" data-bs-toggle="modal" data-bs-target="#shop">
+        <div class="order__div p-1">0</div>
+        <img src="./images/order.png" class="order__icon" width="30px">
+    </div>
+    <a href="#top" class="top">
+        <img src="./images/top.png" width="30px">
+    </a>
+    <div class="robot" onclick="robot()">
+        <img src="./images/robot.png" class="robot__icon" width="30px">
+    </div>
+    <div class="robot__container">
+        <div class="robot__header text-light">
+            <h2 class="mb-0">聊天機器人</h2>
+            <button class="btn-close robot__close" onclick="close_robot()"></button>
+        </div>
+        <div class="robot__body">
+            <p class="w-100">
+                <span class="robot__message">您好，我是本網站的聊天機器人，很高興為您服務，有任何問題都可以向我詢問</span>
+            </p>
+          
+        </div>
+        <div class="robot__footer">
+            <div class="robot__btnbox">
+                <div class="robot__btn" onclick="robot_btn(0)">
+                <a href="#order" class=" text-light">減碳便當</a>
+                </div>
+                <div class="robot__btn" onclick="robot_btn(1)">
+                <a href="#eat" class=" text-light">減碳飲食</a>
+                </div>
+                <div class="robot__btn" onclick="robot_btn(2)">
+                <a href="#work" class=" text-light">減碳生活</a>
+                </div>
+            </div>
+            <div class="robot__inputbox">
+                <input type="text" class="robot__input rounded-pill" onkeydown="inkey(event)" placeholder="請輸入訊息...">
+                <img src="./images/send.png" width="8%" onclick="robot_send()">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>
